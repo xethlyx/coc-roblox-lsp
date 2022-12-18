@@ -22,7 +22,7 @@ import { downloadServer, getLatestRelease } from './downloader';
 
 export type LuaDocument = TextDocument & { languageId: 'lua' };
 export function isLuaDocument(document: TextDocument): document is LuaDocument {
-  const ret = document.languageId === 'lua';
+  const ret = document.languageId === 'luau';
   return ret;
 }
 
@@ -147,7 +147,7 @@ export class Ctx {
     const serverOptions: ServerOptions = { command, args };
 
     const clientOptions: LanguageClientOptions = {
-      documentSelector: [{ language: 'lua' }],
+      documentSelector: [{ language: 'luau' }],
       progressOnInitialization: true,
       initializationOptions: {
         changeConfiguration: true,

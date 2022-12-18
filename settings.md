@@ -137,11 +137,27 @@ End with `!` means override the group setting `diagnostics.groupSeverity`.
 ## `Lua.diagnostics.workspaceDelay`
 - type: `integer`
 - default: `3000`
-- description:    Latency (milliseconds) for workspace diagnostics. When you start the workspace, or edit any file, the entire workspace will be re-diagnosed in the background. Set to negative to disable workspace diagnostics.
+- description:    Latency (milliseconds) for workspace diagnostics.
+## `Lua.diagnostics.workspaceEvent`
+- type: `string`
+- default: `OnSave`
+- description:    Set the time to trigger workspace diagnostics.
 ## `Lua.diagnostics.workspaceRate`
 - type: `integer`
 - default: `100`
 - description:    Workspace diagnostics run rate (%). Decreasing this value reduces CPU usage, but also reduces the speed of workspace diagnostics. The diagnosis of the file you are currently editing is always done at full speed and is not affected by this setting.
+## `Lua.doc.packageName`
+- type: `array`
+- default: ``
+- description:    Treat specific field names as package, e.g. `m_*` means `XXX.m_id` and `XXX.m_type` are package, witch can only be accessed in the file where the definition is located.
+## `Lua.doc.privateName`
+- type: `array`
+- default: ``
+- description:    Treat specific field names as private, e.g. `m_*` means `XXX.m_id` and `XXX.m_type` are private, witch can only be accessed in the class where the definition is located.
+## `Lua.doc.protectedName`
+- type: `array`
+- default: ``
+- description:    Treat specific field names as protected, e.g. `m_*` means `XXX.m_id` and `XXX.m_type` are protected, witch can only be accessed in the class where the definition is located and its subclasses.
 ## `Lua.format.defaultConfig`
 - type: `object`
 - default: `[object Object]`
@@ -209,6 +225,10 @@ Read [formatter docs](https://github.com/CppCXY/EmmyLuaCodeStyle/tree/master/doc
 - type: `integer`
 - default: `1000`
 - description:    The maximum length of a hover to view the contents of a string.
+## `Lua.misc.executablePath`
+- type: `string`
+- default: ``
+- description:    Specify the executable path in VSCode.
 ## `Lua.misc.parameters`
 - type: `array`
 - default: ``
