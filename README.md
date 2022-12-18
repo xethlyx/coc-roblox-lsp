@@ -1,9 +1,9 @@
 # coc-sumneko-lua
 
-Lua extension using sumneko lua-language-server for coc.nvim
+Lua extension using Roblox LSP for coc.nvim
 
-This extension uses server binaries extracted from [`sumneko/vscode-lua`](https://github.com/sumneko/vscode-lua).
-You can also custom the server path([`sumneko-lua.serverDir`](https://github.com/xiyaowong/coc-sumneko-lua/blob/main/settings.md#sumneko-luaserverdir)).
+This extension uses server binaries extracted from [`NightrainsRbx/RobloxLsp`](https://github.com/NightrainsRbx/RobloxLsp).
+You can also custom the server path([`sumneko-lua.serverDir`](https://github.com/xethlyx/coc-roblox-lsp/blob/main/settings.md#sumneko-luaserverdir)).
 
 ## Features
 
@@ -11,31 +11,29 @@ You can also custom the server path([`sumneko-lua.serverDir`](https://github.com
 
   ![base](https://user-images.githubusercontent.com/47070852/133086083-a5357ca3-ada6-46d9-953f-f86026c137e4.png)
 
-- Nvim lua development(check setting `sumneko-lua.enableNvimLuaDev`). Credit: [folke/lua-dev.nvim](https://github.com/folke/lua-dev.nvim)
-
-  ![nvim-lua-dev](https://user-images.githubusercontent.com/47070852/133085674-2310670d-6129-4aac-86ea-0e475bf09b25.gif)
-
 - Inlay-hints provided by coc.nvim.
 
 ## Install
 
-`:CocInstall coc-sumneko-lua`
+`:CocInstall coc-roblox-lsp`
 
-## [Settings(Click me)](https://github.com/xiyaowong/coc-sumneko-lua/blob/main/settings.md)
+## [Settings(Click me)](https://github.com/xethlyx/coc-roblox-lsp/blob/main/settings.md)
 
 ## Commands
 
 | Command                                  | Description                                         |
 | ---------------------------------------- | --------------------------------------------------- |
-| `sumneko-lua.install`                    | Install or update sumneko lua-language-server       |
-| `sumneko-lua.restart`                    | Restart server                                      |
-| `sumneko-lua.version`                    | Echo server version                                 |
-| `sumneko-lua.checkUpdate`                | Check update                                        |
-| `sumneko-lua.showTooltip`                | Show tooltips                                       |
-| `sumneko-lua.insertNvimLuaPluginLibrary` | Insert nvim lua plugin to current workspace library |
+| `roblox-lsp.install`                    | Install or update sumneko lua-language-server       |
+| `roblox-lsp.restart`                    | Restart server                                      |
+| `roblox-lsp.version`                    | Echo server version                                 |
+| `roblox-lsp.checkUpdate`                | Check update                                        |
+| `roblox-lsp.showTooltip`                | Show tooltips                                       |
+| `roblox-lsp.insertNvimLuaPluginLibrary` | Insert nvim lua plugin to current workspace library |
 
 ## Credit
 
+- [`xiyaowong/coc-sumneko-lua`](https://github.com/xiyaowong/coc-sumneko-lua)
+- [`NightrainsRbx/RobloxLsp`](https://github.com/NightrainsRbx/RobloxLsp)
 - [`fannheyward/coc-rust-analyzer`](https://github.com/fannheyward/coc-rust-analyzer)
 - [`sumneko/vscode-lua`](https://github.com/sumneko/vscode-lua)
 - [`josa42/coc-lua`](https://github.com/josa42/coc-lua)

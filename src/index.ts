@@ -24,7 +24,7 @@ export async function activate(context: ExtensionContext): Promise<void> {
     if (ctx.config.prompt) {
       ret =
         (await window.showInformationMessage(
-          'Sumneko lua language server is not found, install now?',
+          'Roblox language server is not found, install now?',
           'Yes',
           'Cancel'
         )) || 'Yes';
@@ -34,12 +34,12 @@ export async function activate(context: ExtensionContext): Promise<void> {
         await downloadServer(context);
       } catch (e) {
         console.error(e);
-        window.showMessage('Download Sumneko lua language server failed', 'error');
+        window.showMessage('Download roblox language server failed', 'error');
         return;
       }
     } else {
       window.showMessage(
-        `You can run ':CocCommand sumneko-lua.install' to install server manually or provide setting 'serverDir'`
+        `You can run ':CocCommand roblox-lsp.install' to install server manually or provide setting 'serverDir'`
       );
       return;
     }
@@ -48,7 +48,7 @@ export async function activate(context: ExtensionContext): Promise<void> {
   ctx.registerCommand('version', cmds.version);
   ctx.registerCommand('restart', (ctx) => {
     return async () => {
-      window.showMessage(`Reloading sumneko lua-language-server...`);
+      window.showMessage(`Reloading Roblox LSP...`);
 
       for (const sub of ctx.subscriptions) {
         try {
@@ -60,7 +60,7 @@ export async function activate(context: ExtensionContext): Promise<void> {
 
       await activate(context);
 
-      window.showMessage(`Reloaded sumneko lua-language-server`);
+      window.showMessage(`Reloaded Roblox LSP`);
     };
   });
   ctx.registerCommand('showTooltip', cmds.showTooltip);

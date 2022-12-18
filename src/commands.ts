@@ -52,7 +52,7 @@ export function insertNvimLuaPluginLibrary(_: Ctx): Cmd {
         let name = '';
 
         if (v == vimruntime) {
-          name = `${vimruntime} (auto added if sumneko-lua.enableNvimLuaDev is true )`;
+          name = `${vimruntime} (auto added if roblox-lsp.enableNvimLuaDev is true )`;
         } else if (v == myvimrc) {
           name = `${myvimrc} (not recommended)`;
         } else {

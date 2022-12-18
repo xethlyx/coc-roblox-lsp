@@ -3,31 +3,31 @@
 
 - [schema.json](https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json)
 - trigger completion in coc-settings
-## `sumneko-lua.enable`
+## `roblox-lsp.enable`
 - type: `boolean`
 - default: `true`
-- description:    Enable coc-sumneko-lua extension
-## `sumneko-lua.prompt`
+- description:    Enable coc-roblox-lsp extension
+## `roblox-lsp.prompt`
 - type: `boolean`
 - default: `true`
 - description:    Prompt when server is not found or when server can be updated
-## `sumneko-lua.locale`
+## `roblox-lsp.locale`
 - type: `string`
 - default: `en-us`
 - description:    The localized language used
-## `sumneko-lua.logPath`
+## `roblox-lsp.logPath`
 - type: `string`
 - default: ``
 - description:    The log path
-## `sumneko-lua.enableNvimLuaDev`
+## `roblox-lsp.enableNvimLuaDev`
 - type: `boolean`
 - default: `false`
 - description:    Enable the nvim lua development
-## `sumneko-lua.checkUpdate`
+## `roblox-lsp.checkUpdate`
 - type: `boolean`
 - default: `true`
 - description:    Automatically check for updates after startup(Only one check within 4 hours)
-## `sumneko-lua.serverDir`
+## `roblox-lsp.serverDir`
 - type: `string`
 - default: `null`
 - description:    The server directory which contains: bin/, changelog.md, debugger.lua, locale/, main.lua, meta/, script/. Download and set by default

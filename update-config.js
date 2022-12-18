@@ -5,7 +5,7 @@ const fs = require('fs');
 const fetch = require('node-fetch');
 
 const packageJson = require('./package.json');
-const config = require('./coc-sumneko-lua.json');
+const config = require('./coc-roblox-lsp.json');
 
 const overrids = {
   'Lua.hint.enable': {

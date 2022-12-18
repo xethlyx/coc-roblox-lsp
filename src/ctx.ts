@@ -36,7 +36,7 @@ export class Ctx {
   constructor(public readonly extCtx: ExtensionContext) {}
 
   registerCommand(name: string, factory: (ctx: Ctx) => Cmd, internal = false) {
-    const fullName = `sumneko-lua.${name}`;
+    const fullName = `roblox-lsp.${name}`;
     const cmd = factory(this);
     const d = commands.registerCommand(fullName, cmd, null, internal);
     this.extCtx.subscriptions.push(d);
@@ -49,7 +49,7 @@ export class Ctx {
   resolveBin(): [string, string[]] | undefined {
     const serverDir = this.config.serverDir
       ? this.config.serverDir
-      : path.join(this.extCtx.storagePath, 'sumneko-lua-ls', 'extension', 'server');
+      : path.join(this.extCtx.storagePath, 'roblox-lsp', 'extension', 'server');
 
     const platform = process.platform;
     const bin = path.join(serverDir, 'bin', platform === 'win32' ? 'lua-language-server.exe' : 'lua-language-server');
@@ -87,7 +87,7 @@ export class Ctx {
     } else {
       // must be based on the version of vscode extension
       try {
-        const packageJson = path.join(this.extCtx.storagePath, 'sumneko-lua-ls', 'extension', 'package.json');
+        const packageJson = path.join(this.extCtx.storagePath, 'roblox-lsp', 'extension', 'package.json');
         const packageData = await fs.readJson(packageJson);
         return packageData.version;
       } catch (err) {
@@ -117,7 +117,7 @@ export class Ctx {
       return;
     }
 
-    const msg = `Sumneko lua-language-server has a new release: ${latest.version}, you're using v${currentVersion}.`;
+    const msg = `roblox-lsp has a new release: ${latest.version}, you're using v${currentVersion}.`;
     if (this.config.prompt) {
       const ret = await window.showQuickpick(['Download the latest server', 'Cancel'], msg);
       if (ret === 0) {
@@ -131,10 +131,10 @@ export class Ctx {
         }
         this.client.start();
       } else {
-        window.showMessage(`You can run ':CocCommand sumneko-lua.install' to upgrade server manually`);
+        window.showMessage(`You can run ':CocCommand roblox-lsp.install' to upgrade server manually`);
       }
     } else {
-      window.showMessage(`${msg} Run :CocCommand sumneko-lua.install to upgrade`);
+      window.showMessage(`${msg} Run :CocCommand roblox-lsp.install to upgrade`);
     }
   }
 
@@ -194,7 +194,7 @@ export class Ctx {
         },
       },
     };
-    return new LanguageClient('sumneko-lua', 'Sumneko Lua Language Server', serverOptions, clientOptions);
+    return new LanguageClient('roblox-lsp', 'Roblox LSP', serverOptions, clientOptions);
   }
 
   async startServer() {

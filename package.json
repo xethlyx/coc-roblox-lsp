@@ -1,8 +1,11 @@
 {
-  "name": "coc-sumneko-lua",
+  "name": "coc-roblox-lsp",
   "version": "0.0.34",
   "description": "Lua extension using sumneko lua-language-server for coc.nvim",
-  "author": "wongxy <xiyao.wong@foxmail.com>",
+  "contributors": [
+    "xethlyx",
+    "wongxy <xiyao.wong@foxmail.com>"
+  ],
   "license": "MIT",
   "main": "lib/index.js",
   "keywords": [
@@ -13,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/xiyaowong/coc-sumneko-lua.git"
+    "url": "https://github.com/xethlyx/coc-roblox-lsp.git"
   },
   "scripts": {
     "lint": "eslint src --ext ts",
@@ -55,19 +58,19 @@
   "contributes": {
     "configuration": {
       "type": "object",
-      "title": "coc-sumneko-lua configuration",
+      "title": "coc-roblox-lsp configuration",
       "properties": {
-        "sumneko-lua.enable": {
+        "coc-roblox-lsp.enable": {
           "type": "boolean",
           "default": true,
-          "description": "Enable coc-sumneko-lua extension"
+          "description": "Enable coc-roblox-lsp extension"
         },
-        "sumneko-lua.prompt": {
+        "coc-roblox-lsp.prompt": {
           "type": "boolean",
           "default": true,
           "description": "Prompt when server is not found or when server can be updated"
         },
-        "sumneko-lua.locale": {
+        "coc-roblox-lsp.locale": {
           "type": "string",
           "default": "en-us",
           "enum": [
@@ -84,22 +87,22 @@
             "`\"pt-br\"` Português"
           ]
         },
-        "sumneko-lua.logPath": {
+        "coc-roblox-lsp.logPath": {
           "type": "string",
           "default": "",
           "description": "The log path"
         },
-        "sumneko-lua.enableNvimLuaDev": {
+        "coc-roblox-lsp.enableNvimLuaDev": {
           "type": "boolean",
           "default": false,
           "description": "Enable the nvim lua development"
         },
-        "sumneko-lua.checkUpdate": {
+        "coc-roblox-lsp.checkUpdate": {
           "type": "boolean",
           "default": true,
           "description": "Automatically check for updates after startup(Only one check within 4 hours)"
         },
-        "sumneko-lua.serverDir": {
+        "coc-roblox-lsp.serverDir": {
           "type": "string",
           "default": null,
           "description": "The server directory which contains: bin/, changelog.md, debugger.lua, locale/, main.lua, meta/, script/. Download and set by default"
@@ -2883,34 +2886,34 @@
     },
     "commands": [
       {
-        "command": "sumneko-lua.install",
-        "title": "Install or update sumneko lua-language-server",
-        "category": "Sumneko lua-language-server"
+        "command": "roblox-lsp.install",
+        "title": "Install or update Roblox LSP",
+        "category": "Roblox LSP"
       },
       {
-        "command": "sumneko-lua.restart",
+        "command": "roblox-lsp.restart",
         "title": "Restart server",
-        "category": "Sumneko lua-language-server"
+        "category": "Roblox LSP"
       },
       {
-        "command": "sumneko-lua.version",
+        "command": "roblox-lsp.version",
         "title": "Echo server version",
-        "category": "Sumneko lua-language-server"
+        "category": "Roblox LSP"
       },
       {
-        "command": "sumneko-lua.checkUpdate",
+        "command": "roblox-lsp.checkUpdate",
         "title": "Check update",
-        "category": "Sumneko lua-language-server"
+        "category": "Roblox LSP"
       },
       {
-        "command": "sumneko-lua.showTooltip",
+        "command": "roblox-lsp.showTooltip",
         "title": "Show tooltips",
-        "category": "Sumneko lua-language-server"
+        "category": "Roblox LSP"
       },
       {
-        "command": "sumneko-lua.insertNvimLuaPluginLibrary",
+        "command": "roblox-lsp.insertNvimLuaPluginLibrary",
         "title": "Insert nvim lua plugin to current workspace library",
-        "category": "Sumneko lua-language-server"
+        "category": "Roblox LSP"
       }
     ]
   }

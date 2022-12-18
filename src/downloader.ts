@@ -5,7 +5,7 @@ import path from 'path';
 import * as fs from 'fs-extra';
 import * as os from 'os';
 
-const ls_name = 'sumneko-lua-ls';
+const ls_name = 'roblox-lsp';
 
 export interface Release {
   version: string;
@@ -24,7 +24,7 @@ export async function getLatestRelease(): Promise<Release | undefined> {
         criteria: [
           {
             filterType: 4,
-            value: '3a15b5a7-be12-47e3-8445-88ee3eabc8b2',
+            value: '169d2b9c-69d2-482a-aee2-ea6c33ed4e89',
           },
         ],
       },
@@ -40,7 +40,7 @@ export async function getLatestRelease(): Promise<Release | undefined> {
       timeout: 10e3,
     });
   } catch (err) {
-    window.showErrorMessage(`[coc-sumneko]: Request failed! Please check your internet!`);
+    window.showErrorMessage(`[coc-roblox-lsp]: Request failed! Please check your internet!`);
     console.error(err);
     return;
   }
@@ -76,7 +76,7 @@ export async function downloadServer(context: ExtensionContext, release?: Releas
     }
   }
 
-  statusItem.text = 'Downloading latest sumneko lua-language-server';
+  statusItem.text = 'Downloading latest Roblox LSP';
 
   const resp = await fetch(release.url, {
     headers: {

@@ -3,7 +3,7 @@ import { workspace } from 'coc.nvim';
 export type Locale = 'en-us' | 'pt-br' | 'zh-cn' | 'zh-tw';
 
 export class Config {
-  private readonly rootSection = 'sumneko-lua';
+  private readonly rootSection = 'roblox-lsp';
 
   get cfg() {
     return workspace.getConfiguration(this.rootSection);
