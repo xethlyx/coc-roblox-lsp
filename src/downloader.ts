@@ -24,7 +24,7 @@ export async function getLatestRelease(): Promise<Release | undefined> {
         criteria: [
           {
             filterType: 4,
-            value: '3a15b5a7-be12-47e3-8445-88ee3eabc8b2',
+            value: '169d2b9c-69d2-482a-aee2-ea6c33ed4e89',
           },
         ],
       },
@@ -50,15 +50,13 @@ export async function getLatestRelease(): Promise<Release | undefined> {
     return;
   }
 
-  const targetPlatform = `${os.platform()}-${os.arch()}`;
-
   const release = await response.json();
 
   const extension = release.results[0].extensions[0].versions[0];
 
   return {
     version: extension.version,
-    url: `${extension.assetUri}/Microsoft.VisualStudio.Services.VSIXPackage?redirect=true&targetPlatform=${targetPlatform}&install=true`,
+    url: `${extension.assetUri}/Microsoft.VisualStudio.Services.VSIXPackage?redirect=true&install=true`,
   };
 }
 

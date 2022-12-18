@@ -52,7 +52,14 @@ export class Ctx {
       : path.join(this.extCtx.storagePath, 'sumneko-lua-ls', 'extension', 'server');
 
     const platform = process.platform;
-    const bin = path.join(serverDir, 'bin', platform === 'win32' ? 'lua-language-server.exe' : 'lua-language-server');
+
+    const resolveByPlatform = {
+      'win32': ['Windows', 'lua-language-server.exe'],
+      'darwin': ['macOS', 'lua-language-server'],
+      'linux': ['Linux', 'lua-language-server'],
+    };
+
+    const bin = path.join(serverDir, 'bin', ...resolveByPlatform[platform]);
     if (!fs.existsSync(bin)) {
       return;
     }
@@ -147,7 +154,7 @@ export class Ctx {
     const serverOptions: ServerOptions = { command, args };
 
     const clientOptions: LanguageClientOptions = {
-      documentSelector: [{ language: 'lua' }],
+      documentSelector: [{ language: 'luau' }],
       progressOnInitialization: true,
       initializationOptions: {
         changeConfiguration: true,
