@@ -69,7 +69,7 @@ export class Ctx {
       return;
     }
 
-    const args: string[] = ['-E', path.join(serverDir, 'bin', 'main.lua'), `--locale=${this.config.locale}`].concat(
+    const args: string[] = ['-E', path.join(serverDir, 'bin', resolveByPlatform[platform][0], 'main.lua'), `--locale=${this.config.locale}`].concat(
       workspace.getConfiguration('Lua').get<string[]>('misc.parameters')!
     );
     if (this.config.logPath.length > 0) {
@@ -201,6 +201,7 @@ export class Ctx {
         },
       },
     };
+    console.log(serverOptions, clientOptions);
     return new LanguageClient('sumneko-lua', 'Sumneko Lua Language Server', serverOptions, clientOptions);
   }
 
